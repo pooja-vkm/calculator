@@ -2,8 +2,13 @@ from tkinter import *
 window=Tk()
 window.title("CALCULATOR")
 expression = ""
+result=False
 def press(num):
     global expression
+    global result
+    if result=True & str(num).isdigit:
+        expression=" "
+        result=False
     expression=expression+str(num)
     equation.set(expression)
 
@@ -22,6 +27,7 @@ def equal():
         value=str(eval(expression))
         equation.set(value)
         expression=value
+        result=True
 
     except:
         equation.set("error")
